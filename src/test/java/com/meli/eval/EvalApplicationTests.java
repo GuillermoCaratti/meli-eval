@@ -76,4 +76,13 @@ public class EvalApplicationTests {
 		assertThrows(Exception.class, () -> finder.isMutant(code));
 	}
 
+	@Test
+	public void wrongNnbPosition() throws Exception {
+		String[] code = DnaGenerator.mockHumanCode(10);
+		var dna = new Dna(code);
+		assertThrows(Exception.class, () -> dna.getNnb(10,10));
+	}
+
+
+
 }
