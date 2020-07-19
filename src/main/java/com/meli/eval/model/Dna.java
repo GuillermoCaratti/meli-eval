@@ -1,5 +1,7 @@
 package com.meli.eval.model;
 
+import com.meli.eval.exception.MalformedDna;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -8,10 +10,10 @@ public class Dna {
     public final Integer size;
     private final List<NitrogenNucleobase> code;
 
-    public Dna(String[] dna) throws Exception {
+    public Dna(String[] dna) throws MalformedDna {
         this.size = dna.length;
         if (Stream.of(dna).anyMatch((gene) -> gene.length() != this.size)) {
-            throw new Exception("Not valid DNA structure");
+            throw new MalformedDna();
         }
         this.code = Stream.of(dna)
                 .flatMapToInt(String::chars)
@@ -21,7 +23,7 @@ public class Dna {
                         case 'G': return NitrogenNucleobase.G;
                         case 'A': return NitrogenNucleobase.A;
                         case 'T': return NitrogenNucleobase.T;
-                        default: throw new RuntimeException("Not valid DNA structure");
+                        default: throw new MalformedDna();
                     }
                 })
                 .collect(Collectors.toList());
@@ -55,4 +57,5 @@ public class Dna {
         var y = idx / this.size;
         return new NnbPosition((int) x,(int) y);
     }
+
 }

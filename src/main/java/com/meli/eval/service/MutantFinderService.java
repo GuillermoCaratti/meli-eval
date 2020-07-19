@@ -1,5 +1,6 @@
 package com.meli.eval.service;
 
+import com.meli.eval.exception.MalformedDna;
 import com.meli.eval.model.Dna;
 import com.meli.eval.model.Gene;
 import com.meli.eval.model.NnbPosition;
@@ -27,7 +28,7 @@ public class MutantFinderService {
     private final Boolean verifyIntersections;
     private final Integer maxIntersections;
 
-    public Boolean isMutant (final String[] dna) throws Exception {
+    public Boolean isMutant (final String[] dna) throws MalformedDna {
         return this.isMutant(new Dna(dna));
     }
 

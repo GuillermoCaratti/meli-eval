@@ -4,10 +4,7 @@ import com.meli.eval.model.Dna;
 import com.meli.eval.model.Gene;
 import com.meli.eval.model.NitrogenNucleobase;
 import com.meli.eval.model.NnbPosition;
-import org.springframework.stereotype.Component;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -20,22 +17,12 @@ public class DnaPrinter {
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
 
-    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
     public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
     public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
-
-    public static void printDna(Dna dna){
-      printDna(dna, Collections.emptyList());
-    }
 
     public static void printDna(Dna dna, List<Gene> mutantGenes){
         List<NnbPosition> solutions = mutantGenes.stream()
