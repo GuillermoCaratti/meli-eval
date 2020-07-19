@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "gene.minChain",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "gene.maxChain",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "gene.minGenes",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "gene.verifyIntersections",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "name": "gene.maxIntersections",
+      "type": "java.lang.Integer"
+    }
+  ] }
