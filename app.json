@@ -1,0 +1,6 @@
+{
+  "name": "Magneto mutant finder",
+  "description": "Are you one of us?",
+  "image": "heroku/gradle",
+  "addons": [ "heroku-postgresql" ]
+}
