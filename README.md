@@ -2,6 +2,9 @@
 This project verifies if your DNA is **OK** _...or you are a human_.
 
 ## Installation
+
+For installation with Docker see [Docker installation section](#installation-with-docker)
+
 ### Requirements
 * Java 11 or superior
 * Git
@@ -16,6 +19,28 @@ cd meli-eval
 ./gradlew bootRun
 ```
 > Windows users may use `gradlew` instead of `./gradlew` 
+
+## Installation with Docker
+
+### Requirements
+* Git
+* Docker
+
+Just run
+```shell 
+git clone https://github.com/GuillermoCaratti/meli-eval.git
+cd meli-eval
+doker-compose up
+```
+
+...and wait until you see something like ` Started EvalApplication in 9.213 seconds (JVM running for 10.568)`
+
+To stop the server press `Crtl` + `C` to go back to the console and execute
+
+```shell 
+doker-compose down -v
+docker image rm meli-eval_web
+```
 
 ## Usage
 #### check if you are a mutant :passport_control:
@@ -51,6 +76,9 @@ This project counts with more than ~~_80%_~~ **90%** of code coverage ! :ribbon:
 
 ## Demo
 A demo is deployed in https://pure-sea-07386.herokuapp.com/
+
+> Heroku force to stop the application automatically after 30 minutes of inactivity. The
+>  first access can take a while to load.
 
 ## Development
 
