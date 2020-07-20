@@ -20,6 +20,14 @@ public class ValidationService {
     @Autowired
     MutantFinderService finder;
 
+    /**
+     * Validates that the genetic code corresponds to a mutant and saves the
+     * the information for future analysis.
+     *
+     * @param code dna
+     * @throws MalformedDna if the DNA is wrong
+     * @throws HumanFound if is not a mutant
+     */
     public void validate(String[] code) throws MalformedDna, HumanFound {
         var dna = new Dna(code);
         var isMutant = finder.isMutant(dna);
@@ -33,6 +41,9 @@ public class ValidationService {
         }
     }
 
+    /**
+     * @return the current statistics of the global analysis.
+     */
     public StatsDto getStats (){
         var report = repo.stats();
         var countMutantDna = report.get("mutantAmount",Long.class);

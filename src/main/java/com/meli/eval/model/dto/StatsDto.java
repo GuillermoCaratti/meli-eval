@@ -15,5 +15,6 @@ import java.util.Optional;
 public class StatsDto {
     private Long countMutantDna;
     private Long countHumanDna;
+    /* The ratio can be "null" is there no information */
     private Optional<Float> ratio;
 }

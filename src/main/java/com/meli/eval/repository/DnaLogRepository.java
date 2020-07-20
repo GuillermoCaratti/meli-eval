@@ -11,7 +11,7 @@ import javax.persistence.Tuple;
 public interface DnaLogRepository extends JpaRepository<DnaLog,Integer> {
 
     @Query(value = "SELECT SUM(case when e.isMutant = true THEN 1 ELSE 0 END) as mutantAmount, " +
-            "SUM(case when e.isMutant = true THEN 0 ELSE 1 END) as humanAmount " +
+            "SUM(case when e.isMutant = false THEN 1 ELSE 0 END) as humanAmount " +
             "FROM DnaLog e ")
     Tuple stats();
 
