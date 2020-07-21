@@ -1,0 +1,26 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - appNet
+  db:
+    image: postgres
+    expose:
+      - "5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=mydb
+    networks:
+      - appNet
+
+volumes:
+  postgres-data:
+
+networks:
+  appNet:
